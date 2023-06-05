@@ -60,6 +60,6 @@ nav ul li a span {
 
 .nav-link.resume:hover {
     background-color: rgba(145, 252, 220, 0.2);
-    transition: background-color 0.35s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
