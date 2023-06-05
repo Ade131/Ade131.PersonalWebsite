@@ -5,6 +5,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
+h1 {
+    color:rgb(211, 211, 255);
+}
+
 header {
     background-color: rgba(14, 25, 45, 0.8);
     backdrop-filter: blur(3px); 
@@ -19,12 +23,17 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
     z-index: 999;
+    box-shadow: "none";
 }
 
 header.hide {
     transform: translateY(-200%);
+}
+
+header.shadow {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .title h1 {
@@ -76,11 +85,7 @@ nav ul li a span {
 }
 
 .dummy-content {
-    height: 400vh;
-    background-color: rgba(255, 255, 255, 0.2); 
-}
-
-h1 {
-    color:rgb(211, 211, 255);
+    height: 30vh;
+    background-color: rgba(255, 255, 255, 0); 
 }
 
