@@ -19,7 +19,7 @@ window.onscroll = function() {
     if (prevScrollPos > currentScrollPos) {
         //Scrolling up
         header.classList.remove("hide");
-    } else if (currentScrollPos > 200) {
+    } else if (currentScrollPos > 150) {
         //Scrolling down
         header.classList.add("shadow")
         header.classList.add("hide");
