@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(14, 25, 45);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: rgb(14, 25, 45);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    font-family: monospace;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 24px;
+    margin-left: 15px;
+    color: rgb(145, 252, 220);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 15px;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: rgb(145, 252, 220);
+    font-size: 15px;
+    text-decoration: none;
+    font-family: monospace;
+    position: relative;
+}
+
+nav ul li a span {
+    color: rgb(211, 211, 255);
+}
+
+.nav-link:hover span {
+    color: rgb(145, 252, 220);
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link.resume {
+    padding: 8px;
+    border: 1px solid rgb(145, 252, 220);
+    border-radius: 5px;
+}
+
+.nav-link.resume:hover {
+    background-color: rgba(145, 252, 220, 0.2);
+    transition: background-color 0.35s ease-in-out;
+}
+
