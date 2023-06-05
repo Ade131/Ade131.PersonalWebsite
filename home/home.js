@@ -2,6 +2,7 @@ window.onbeforeunload = function() {
     window.scrollTo(0, 0);
 };
 
+//Header hide/show
 var prevScrollPos = window.pageYOffset;
 var header = document.querySelector("header");
 var scrollUpThreshold = 10;
