@@ -6,11 +6,8 @@ window.onscroll = function() {
 
     if (prevScrollPos > currentScrollPos) {
         //Scrolling up
-        if (currentScrollPos < 600) {
-            //If user is near the top of the page
             header.classList.remove("hide");
-        }
-    } else if (currentScrollPos > 300) {
+    } else if (currentScrollPos > 200) {
         //Scrolling down
         header.classList.add("hide");
     }
