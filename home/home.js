@@ -4,6 +4,7 @@ window.onbeforeunload = function() {
 
 var prevScrollPos = window.pageYOffset;
 var header = document.querySelector("header");
+var scrollUpThreshold = 10;
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
