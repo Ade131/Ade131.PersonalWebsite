@@ -12,6 +12,11 @@
    --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--div-color-background);
     -webkit-font-smoothing: antialiased;
@@ -311,6 +316,8 @@ a {
     }
 }
 
+/* About Section */
+
 #About {
     display: flex;
     flex-direction: column;
@@ -374,6 +381,113 @@ a {
 #About .tech-list li i {
     margin-right: 5px;
     width: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    #About .main-content-wrapper {
+        flex-direction: column;
+    }
+
+    #About .about-text,
+    #About .about-image {
+        width: 100%;
+    }
+}
+
+/* Education Section */
+
+#Education {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin: 50px auto;
+    padding: 0px;
+    max-width: 900px;
+}
+
+#Education .title-content-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+#Education .content-small-monospace {
+    font-size: 20px;
+}
+
+#Education .content-medium {
+    color: var(--text-color-lightbluegrey);
+    margin: 0;
+}
+
+#Education .main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Projects Section */
+
+#Projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin: 50px auto;
+    padding: 0px;
+    max-width: 900px;
+}
+
+#Projects .title-content-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+#Projects .content-small-monospace {
+    font-size: 20px;
+}
+
+#Projects .content-medium {
+    color: var(--text-color-lightbluegrey);
+    margin: 0;
+}
+
+#Projects .main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Projects Section */
+
+#Contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin: 50px auto;
+    padding: 0px;
+    max-width: 900px;
+}
+
+#Contact .title-content-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+#Contact .content-small-monospace {
+    font-size: 20px;
+}
+
+#Contact .content-medium {
+    color: var(--text-color-lightbluegrey);
+    margin: 0;
+}
+
+#Contact .main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Social icons & links styling */

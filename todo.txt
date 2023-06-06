@@ -1,13 +1,13 @@
 # Important #
 
- - Smooth scrolling when clicking on nav bar elements
+ - 
 
-# Annoying #
+# Major #
 
-- Footer is lifted from the bottom due 
-  to social/email after lines
+- Add content between intro & about (line, arrow, something to encourage scrolling)
+- Implement animated background (reacts to mouse movement, scrolling, etc)
 
 # Minor #
 
-- Change transform from scale to move up
+- Change transform from scale to move on icons hover over
 - Hamburger overlay goes under the header
