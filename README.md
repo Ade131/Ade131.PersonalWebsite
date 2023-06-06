@@ -4,7 +4,7 @@ This repository contains the source code for my personal website, showcasing my 
 
 ## Live Demo
 
-You can see the live demo of the website at [ade131.github.io](https://ade131.github.io).
+You can see the live version of the website at [ade131.github.io](https://ade131.github.io).
 
 ## Technologies Used
 
