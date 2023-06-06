@@ -523,7 +523,7 @@ a {
     transform: translateX(-50%);
     width: 2px;
     height: 15rem;
-    top: 7rem;
+    top: 9rem;
     bottom: 0;
     background-color: var(--text-color-grey);
 }
