@@ -1,11 +1,15 @@
 :root {
    --text-color-cyan: rgb(145, 252, 220);
+   --text-color-darkbluegrey: rgb(138, 146, 173);
+   --text-color-lightbluegrey: rgb(206, 214, 243);
    --text-color-grey: rgb(211, 211, 255);
    --div-color-shadow: rgba(0, 0, 0, 0.5);
    --div-color-hover: rgba(145, 252, 220, 0.2);
    --div-color-background: rgb(14, 25, 45);
    --div-color-header: rgba(14, 25, 45, 0.8);
    --div-color-navMenu: rgb(21, 34, 62);
+   --font-sans: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;
+   --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
 }
 
 body {
@@ -52,7 +56,7 @@ a {
 }
 
 .title {
-    font-family: monospace;
+    font-family: var(--font-mono);
     margin: 0;
     font-size: 24px;
     color: var(--text-color-cyan);
@@ -90,7 +94,7 @@ a {
     color: var(--text-color-cyan);
     font-size: 15px;
     text-decoration: none;
-    font-family: monospace;
+    font-family: var(--font-mono);
     position: relative;
     transition: 0.3s ease-in-out;
 }
@@ -203,7 +207,7 @@ a {
     }
 }
 
-/* Rest */
+/* Content Styling */
 
 .content {
     flex: 1;
@@ -217,6 +221,34 @@ a {
     transition: 0.3s;
     filter: blur(4px);
     -webkit-filter: blur(4px);
+}
+
+#Intro {
+
+}
+
+.content-small-monospace {
+    font-size: 16px;
+    font-family: var(--font-mono);
+    color: var(--text-color-cyan);
+}
+
+.content-small {
+    font-size: 16px;
+    font-family: var(--font-sans);
+    color: var(--text-color-darkbluegrey);
+}
+
+.content-medium {
+    font-size: 24px;
+    font-family: var(--font-sans);
+    color: var(--text-color-darkbluegrey);
+}
+
+.content-large {
+    font-size: 36px;
+    font-family: var(--font-sans);
+    color: var(--text-color-lightbluegrey);
 }
 
 /* Social icons & links styling */
@@ -295,7 +327,7 @@ a {
     color: var(--text-color-grey);
     writing-mode: vertical-lr;
     font-size: 16px;
-    font-family: monospace;
+    font-family: var(--font-mono);
     text-decoration: none;
     transition: 0.3s ease-in-out;
 }
@@ -350,7 +382,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: monospace;
+    font-family: var(--font-mono);
     padding: 20px 0 5px 0;
 }
 
@@ -373,29 +405,6 @@ footer{
     .footer-content a {
         font-size: 10px;
     }
-}
-
-
-
-
-
-
-
-
-
-
-.dummy-content {
-    height: 30vh;
-    background-color: rgba(255, 255, 255, 0); 
-}
-
-h1 {
-    color: white;
-}
-
-h2 {
-    color: white;
-    text-align: right;
 }
 
 
