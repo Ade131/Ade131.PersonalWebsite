@@ -20,7 +20,6 @@ window.onscroll = function() {
         //At the top of the page
         header.classList.remove("shadow");
         header.classList.remove("hide");
-        arrows.classList.remove("arrow-fade-out");
     }
 
     if (prevScrollPos > currentScrollPos) {
