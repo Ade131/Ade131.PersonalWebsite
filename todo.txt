@@ -1,0 +1,11 @@
+# Important #
+
+
+# Annoying #
+
+- Footer is lifted from the bottom due 
+  to social/email after lines
+
+# Minor #
+
+- Hamburger overlay goes under the header

@@ -223,10 +223,6 @@ a {
     -webkit-filter: blur(4px);
 }
 
-#Intro {
-
-}
-
 .content-small-monospace {
     font-size: 16px;
     font-family: var(--font-mono);
@@ -250,6 +246,33 @@ a {
     font-family: var(--font-sans);
     color: var(--text-color-lightbluegrey);
 }
+
+#Intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+}
+
+#Intro .content-large {
+    margin: 5px 0;
+    font-size: 64px;
+}
+
+#Intro .content-medium {
+    font-size: 60px;
+    margin: 5px 0;
+}
+
+#Intro .content-small {
+    width: 60%;
+}
+
+#Intro .content-small-monospace {
+    margin: 0 5px;
+}
+
+
 
 /* Social icons & links styling */
 
