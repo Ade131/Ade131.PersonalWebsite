@@ -217,6 +217,12 @@ a {
     margin-top: 100px;
 }
 
+@media only screen and (max-width: 768px) {
+    .content {
+        padding: 20px 30px;
+    }
+}
+
 .content.blur > *:not(.header) {
     transition: 0.3s;
     filter: blur(4px);
@@ -249,9 +255,13 @@ a {
 
 #Intro {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: flex-start;
+    min-height: 100vh;
     width: 80%;
+    margin: 50px auto;
+    padding: 0px;
 }
 
 #Intro .content-large {
@@ -270,6 +280,31 @@ a {
 
 #Intro .content-small-monospace {
     margin: 0 5px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #Intro {
+        width: 90%
+    }
+
+    #Intro .content-large {
+        margin: 5px 0;
+        font-size: 50px;
+    }
+    
+    #Intro .content-medium {
+        font-size: 30px;
+        margin: 5px 0;
+    }
+    
+    #Intro .content-small {
+        width: 80%;
+    }
+    
+    #Intro .content-small-monospace {
+        margin: 0 5px;
+    }
 }
 
 
