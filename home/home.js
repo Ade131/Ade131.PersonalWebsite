@@ -1,11 +1,17 @@
-//Set position to top when reloading
+/*
+ * Set position to top when reloading
+ */
 window.onbeforeunload = function() {
     window.scrollTo(0, 0);
 };
 
-//Header hide/show when scrolling
+/*
+ * Header hide/show when scrolling
+ * & Fading out scroll prompt arrows
+ */
 var prevScrollPos = window.pageYOffset;
 const header = document.querySelector(".header");
+const arrows = document.querySelector(".arrow-wrapper");
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
@@ -14,20 +20,24 @@ window.onscroll = function() {
         //At the top of the page
         header.classList.remove("shadow");
         header.classList.remove("hide");
+        arrows.classList.remove("arrow-fade-out");
     }
 
     if (prevScrollPos > currentScrollPos) {
         //Scrolling up
         header.classList.remove("hide");
-    } else if (currentScrollPos > 100) {
+    } else if (currentScrollPos > 150) {
         //Scrolling down
         header.classList.add("shadow")
         header.classList.add("hide");
+        arrows.classList.add("arrow-fade-out");
     }
     prevScrollPos = currentScrollPos;
     };
 
-//Hamburger menu logic
+/*
+ * Hamburger menu logic
+ */ 
 const hamburger = document.querySelector(".hamburger");
 const overlay = document.querySelector(".hamburger-overlay");
 const navMenu = document.querySelector(".nav-menu");
@@ -51,7 +61,7 @@ function mobileMenu() {
     }
 }
 
-//Close menu when user clicks outside the menu box
+//Close burger menu when user clicks outside the menu box
 function closeMenuOutside(event) {
     if (
         content.classList.contains("blur") &&
@@ -67,9 +77,10 @@ function closeMenuOutside(event) {
     }
 }
 
-//Close menu when option selected
+/*
+ * Close burger menu when option selected
+ */ 
 const navLink = document.querySelectorAll(".nav-link");
-
 navLink.forEach(n => n.addEventListener("click", closeMenu));
 
 function closeMenu() {
