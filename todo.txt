@@ -1,5 +1,6 @@
 # Important #
 
+ - Smooth scrolling when clicking on nav bar elements
 
 # Annoying #
 
@@ -8,4 +9,5 @@
 
 # Minor #
 
+- Change transform from scale to move up
 - Hamburger overlay goes under the header

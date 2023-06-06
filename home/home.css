@@ -14,6 +14,8 @@
 
 body {
     background-color: var(--div-color-background);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -211,7 +213,7 @@ a {
 
 .content {
     flex: 1;
-    padding: 100px 70px;
+    padding: 80px 70px;
     display: flex;
     flex-direction: column;
     margin-top: 100px;
@@ -255,18 +257,18 @@ a {
 
 #Intro {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
-    min-height: 100vh;
     width: 80%;
     margin: 50px auto;
-    padding: 0px;
+    padding: 50px 0 400px 0;
+    max-width: 900px;
 }
 
 #Intro .content-large {
     margin: 5px 0;
-    font-size: 64px;
+    font-size: 70px;
 }
 
 #Intro .content-medium {
@@ -275,7 +277,9 @@ a {
 }
 
 #Intro .content-small {
-    width: 60%;
+    width: 70%;
+    margin: 5px auto 0 0;
+    line-height: 1.5;
 }
 
 #Intro .content-small-monospace {
@@ -307,14 +311,77 @@ a {
     }
 }
 
+#About {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin: 50px auto;
+    padding: 0px;
+    max-width: 900px;
+}
 
+#About .title-content-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+#About .content-small-monospace {
+    font-size: 20px;
+}
+
+#About .content-medium {
+    color: var(--text-color-lightbluegrey);
+    margin: 0;
+}
+
+#About .main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#About .about-text {
+    width: 50%;
+    max-width: 450px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    line-height: 1.5;
+}
+
+#About .about-image {
+    width: 50%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+#About .tech-list {
+    display: grid;
+    padding-inline-start: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+}
+
+#About .tech-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-family: var(--font-sans);
+    color: var(--text-color-darkbluegrey);
+}
+
+#About .tech-list li i {
+    margin-right: 5px;
+    width: 20px;
+}
 
 /* Social icons & links styling */
 
 .socials {
     position: fixed;
-    left: 30px;
-    bottom: 40px;
+    left: 60px;
+    bottom: 150px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
@@ -372,8 +439,8 @@ a {
 
 .email {
     position: fixed;
-    right: 30px;
-    bottom: 100px;
+    right: 60px;
+    bottom: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
