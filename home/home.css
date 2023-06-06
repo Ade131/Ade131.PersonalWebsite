@@ -107,6 +107,7 @@ a {
 
 .hamburger {
     display: none;
+    z-index: 5;
 }
 
 .bar {
@@ -117,6 +118,10 @@ a {
     -webkit-transition: all 0.3x ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: rgb(145, 252, 220);
+}
+
+.hamburger-overlay {
+    display: none;
 }
 
 /* Media queries for hamburger menu */
@@ -130,20 +135,33 @@ a {
         top: 3rem;
         flex-direction: column;
         width: 50%;
-        border-radius: 2px;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
         background-color: rgb(21, 34, 62);
-        z-index: 1;
+        z-index: 2;
     }
 
-    .nav-menu.active {
+    .hamburger-overlay {
+        display: block;
+        position: fixed;
+        right: -100%;
+        width: 60%;
+        top: 0;
+        bottom: 0;
+        background-color: rgb(21, 34, 62);
+        transition: 0.3s;
+        z-index: 0;
+        pointer-events: none;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.active,
+    .hamburger-overlay.active {
         right: 0;
     }
 
     .nav-item {
-        margin: 2.5rem 0;
+        margin: 2rem 0;
     }
 
     .hamburger {

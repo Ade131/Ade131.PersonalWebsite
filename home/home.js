@@ -29,6 +29,7 @@ window.onscroll = function() {
 
 //Hamburger menu logic
 const hamburger = document.querySelector(".hamburger");
+const overlay = document.querySelector(".hamburger-overlay");
 const navMenu = document.querySelector(".nav-menu");
 const content = document.querySelector(".content");
 const body = document.querySelector("body");
@@ -39,6 +40,7 @@ body.addEventListener("click", closeMenuOutside);
 //When menu is opened
 function mobileMenu() {
     hamburger.classList.toggle("active");
+    overlay.classList.toggle("active");
     navMenu.classList.toggle("active");
     content.classList.toggle("blur");
     //Disable scrolling when menu is open
@@ -59,6 +61,7 @@ function closeMenuOutside(event) {
         //Click occurred outside the menu box
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
+        overlay.classList.remove("active");
         content.classList.remove("blur");
         body.style.overflow = "";
     }
@@ -72,6 +75,7 @@ navLink.forEach(n => n.addEventListener("click", closeMenu));
 function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
+    overlay.classList.remove("active");
     content.classList.remove("blur");
     body.style.overflow = "";
 }
