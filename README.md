@@ -1,4 +1,4 @@
-# Personal Website - Aidan Kelly
+# Personal Website
 
 This repository contains the source code for my personal website, showcasing my university experience and projects. The website provides an overview of my background, education, projects, and contact information.
 
