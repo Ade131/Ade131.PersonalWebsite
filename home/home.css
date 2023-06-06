@@ -11,7 +11,9 @@ a {
     text-decoration: none;
   }
 
-header {
+  /* Header Styles */
+
+.header {
     display: flex;
     justify-content: space-between;
     -webkit-box-pack: justify;
@@ -31,15 +33,15 @@ header {
     box-shadow: none;
 }
 
-header.hide {
+.header.hide {
     transform: translateY(-200%);
 }
 
-header.shadow {
+.header.shadow {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.title h1 {
+.title {
     font-family: monospace;
     margin: 0;
     font-size: 24px;
@@ -49,22 +51,31 @@ header.shadow {
     border-radius: 50px;
 }
 
-.title h1:hover {
+.title:hover {
     background-color: rgba(145, 252, 220, 0.2);
     transition: background-color 0.2s ease-in-out;
 }
 
 /* Styles for the nav menu*/
-.menu {
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
     list-style: none;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.menu li {
-    margin-left: 25px;
+.nav-item {
+    margin-left: 2rem;
 }
 
-.menu li a {
+.nav-menu li a {
     color: rgb(145, 252, 220);
     font-size: 15px;
     text-decoration: none;
@@ -72,7 +83,7 @@ header.shadow {
     position: relative;
 }
 
-.menu li a span {
+.nav-menu li a span {
     color: rgb(211, 211, 255);
 }
 
@@ -92,12 +103,85 @@ header.shadow {
     transition: background-color 0.2s ease-in-out;
 }
 
+/* Styles for the hamburger */
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3x ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(145, 252, 220);
+}
+
+/* Media queries for hamburger menu */
+
+@media only screen and (max-width: 768px) {
+
+    .nav-menu {
+        position: fixed;
+        align-items: flex-start;
+        right: -100%;
+        top: 3rem;
+        flex-direction: column;
+        width: 50%;
+        border-radius: 2px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+        background-color: rgb(21, 34, 62);
+        z-index: 1;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Style to animate hamburger menu */
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        width: 25px;
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        width: 25px;
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+/* Rest */
+
 .content {
     flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
     margin-top: 100px;
+}
+
+.content.blur > *:not(.header) {
+    transition: 0.3s;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
 }
 
 .dummy-content {
