@@ -1,30 +1,30 @@
 /*
  * Set position to top when reloading
  */
-window.onbeforeunload = function() {
+window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
 
 /*
  * Animated page load
  */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     //Fade in header
     const header = document.querySelector(".header");
     header.classList.add("fade-in");
 
     //Fade in nav items
     const navItems = document.querySelectorAll(".nav-item");
-    navItems.forEach(function(navItem, index) {
-        setTimeout(function() {
+    navItems.forEach(function (navItem, index) {
+        setTimeout(function () {
             navItem.classList.add("fade-in", "slide-down");
         }, index * 150); //delay
     });
 
     //Fade in intro section
     const introSections = document.querySelectorAll(".intro-content > div");
-    introSections.forEach(function(div, index) {
-        setTimeout(function() {
+    introSections.forEach(function (div, index) {
+        setTimeout(function () {
             div.classList.add("fade-in");
             div.classList.add("slide-up");
         }, 600 + index * 100) //Delay
@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded", function() {
     //Fade in links
     const socialContent = document.querySelector(".socials");
     const emailContent = document.querySelector(".email");
-    setTimeout(function() {
+    setTimeout(function () {
         socialContent.classList.add("fade-in");
         emailContent.classList.add("fade-in");
     }, 700);
 
     //Fade in arrow
     const arrowWrapper = document.querySelector(".arrow-wrapper");
-    setTimeout(function() {
+    setTimeout(function () {
         arrowWrapper.classList.add("fade-in");
     }, 2500); //delay
 });
@@ -53,17 +53,17 @@ function isElementInViewport(element) {
     var rect = element.getBoundingClientRect();
     var windowHeight = window.innerHeight || document.documentElement.clientHeight;
     var topThreshold = windowHeight * 0.15; //  sections appear when they reach 20% of the window height
-  
+
     return (
-      rect.top <= windowHeight - topThreshold &&
-      rect.bottom >= topThreshold
+        rect.top <= windowHeight - topThreshold &&
+        rect.bottom >= topThreshold
     );
-  }
+}
 
 //Fade in sections as they appear in viewport
 function fadeInSectionsOnScroll() {
     const sections = document.querySelectorAll(".section");
-    sections.forEach(function(section) {
+    sections.forEach(function (section) {
         if (isElementInViewport(section)) {
             if (section.id === "About") {
                 fadeInAboutSection();
@@ -82,7 +82,7 @@ function fadeInAboutSection() {
     aboutText.classList.add("fade-in");
     aboutTitle.classList.add("fade-in");
     images.forEach(function (image, index) {
-        setTimeout(function() {
+        setTimeout(function () {
             image.classList.add("place-down");
         }, (index + 1) * 700); //Delay each image animation
     });
@@ -100,7 +100,7 @@ const header = document.querySelector(".header");
 const arrows = document.querySelector(".arrow-wrapper");
 const about = document.querySelector(".about-me");
 
-window.onscroll = function() {
+window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
 
     if (currentScrollPos < 100) {
@@ -124,7 +124,7 @@ window.onscroll = function() {
         about.style.opacity = "1";
     }
     prevScrollPos = currentScrollPos;
-    };
+};
 
 /*
  * Smooth scroll to target elements
@@ -144,7 +144,7 @@ function smoothScroll(target) {
 //Attach click listeners to nav links
 const navLinks = document.querySelectorAll(".header a");
 navLinks.forEach(link => {
-    link.addEventListener("click", function(event) {
+    link.addEventListener("click", function (event) {
         event.preventDefault();
         const target = link.getAttribute("href");
         smoothScroll(target);
@@ -155,7 +155,7 @@ navLinks.forEach(link => {
 
 /*
  * Hamburger menu logic
- */ 
+ */
 const hamburger = document.querySelector(".hamburger");
 const overlay = document.querySelector(".hamburger-overlay");
 const navMenu = document.querySelector(".nav-menu");
@@ -197,7 +197,7 @@ function closeMenuOutside(event) {
 
 /*
  * Close burger menu when option selected
- */ 
+ */
 const navLink = document.querySelectorAll(".nav-link");
 navLink.forEach(n => n.addEventListener("click", closeMenu));
 
@@ -208,4 +208,26 @@ function closeMenu() {
     content.classList.remove("blur");
     body.style.overflow = "";
 }
-  
+
+
+
+const projectList = document.querySelector("#Projects .project-list");
+const selectionIndicator = document.querySelector("#Projects .selection-indicator");
+
+projectList.addEventListener("click", (event) => {
+  const selectedItem = event.target.closest("li");
+  if (selectedItem) {
+    const listItems = projectList.querySelectorAll("li");
+    listItems.forEach((item) => {
+      item.classList.remove("selected");
+    });
+    selectedItem.classList.add("selected");
+
+    const topOffset = selectedItem.offsetTop;
+    const itemHeight = selectedItem.offsetHeight;
+    selectionIndicator.style.top = `${topOffset}px`;
+    selectionIndicator.style.height = `${itemHeight}px`;
+  }
+});
+
+

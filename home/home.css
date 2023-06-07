@@ -8,6 +8,7 @@
     --div-color-background: rgb(13, 25, 46);
     --div-color-header: rgba(14, 25, 45, 0.8);
     --div-color-navMenu: rgb(21, 34, 62);
+    --div-color-separator: rgb(62, 136, 146);
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 }
@@ -671,32 +672,117 @@ a {
 #Projects {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
     width: 80%;
     margin: 50px auto;
     padding: 0px;
     max-width: 900px;
-}
-
-#Projects .title-content-wrapper {
+  }
+  
+  #Projects .title-content-wrapper {
     display: flex;
     align-items: baseline;
-}
-
-#Projects .content-small-monospace {
+  }
+  
+  #Projects .content-small-monospace {
     font-size: 20px;
-}
-
-#Projects .content-medium {
+  }
+  
+  #Projects .content-medium {
     color: var(--text-color-lightbluegrey);
     margin: 0;
+  }
+  
+  #Projects .main-content-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 20px;
+    height: 100%;
+  }
+  
+  /* Project List */
+  #Projects .project-list {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    position: relative;
+  }
+
+  #Projects .project-list .content-small {
+    line-height: 0;
+    font-size: 16px;
 }
 
-#Projects .main-content-wrapper {
+  #Projects .project-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #Projects .project-list li {
+    cursor: pointer;
+    padding: 2%;
+    color: var(--text-color-lightbluegrey);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
+    transition: color 0.3s ease;
+  }
+
+  #Projects .project-list li .content-small {
+    transition: color 0.3s ease;
+  }
+
+  /*Line separator */
+  #Projects .project-list li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 65%;
+    height: 1px;
+    background-color: var(--div-color-separator);
+  }
+
+  #Projects .project-list li:hover .content-small {
+    color: var(--text-color-cyan);
+  }
+
+  #Projects .project-list li.selected .content-small {
+    color: var(--text-color-cyan);
+  }
+
+/* Indicator for selected project */
+#Projects .selection-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background-color: var(--text-color-cyan);
+    opacity: 1;
+    transition: 0.3s ease;
 }
+
+#Projects .project-list .selected .selection-indicator {
+  opacity: 1;
+}
+  
+  /* Project Content */
+  #Projects .project-view {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: var(--text-color-cyan);
+  }
+
+
+
+
+
+
+
 
 /* Education Section */
 
