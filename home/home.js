@@ -8,7 +8,6 @@ window.onbeforeunload = function() {
 /*
  * Animated page load
  */
-//wait for DOM content to load
 document.addEventListener("DOMContentLoaded", function() {
     //Fade in header
     const header = document.querySelector(".header");
@@ -47,6 +46,35 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /*
+ * Animate in sections as scroll down
+ */
+//Check if section is in viewport
+function isElementInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    var topThreshold = windowHeight * 0.2; // 20% of the window height
+  
+    return (
+      rect.top <= windowHeight - topThreshold &&
+      rect.bottom >= topThreshold
+    );
+  }
+
+//Fade in sections as they appear in viewport
+function fadeInSectionsOnScroll() {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(function(section) {
+        if (isElementInViewport(section)) {
+            section.classList.add("fade-in");
+            section.classList.add("slide-up");
+        }
+    });
+}
+
+// Add event listener to window scroll event
+window.addEventListener("scroll", fadeInSectionsOnScroll);
+
+/*
  * Header hide/show when scrolling
  * & Fading out scroll prompt arrows
  */
@@ -66,11 +94,12 @@ window.onscroll = function() {
     if (prevScrollPos > currentScrollPos) {
         //Scrolling up
         header.classList.remove("hide");
-    } else if (currentScrollPos > 150) {
+    } else if (currentScrollPos > 170) {
         //Scrolling down
         header.classList.add("shadow")
         header.classList.add("hide");
         arrows.classList.add("arrow-fade-out");
+        arrows.classList.remove("fade-in")
     }
     prevScrollPos = currentScrollPos;
     };
