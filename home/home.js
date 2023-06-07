@@ -105,6 +105,33 @@ window.onscroll = function() {
     };
 
 /*
+ * Smooth scroll to target elements
+ */
+//Smooth scroll down
+function smoothScroll(target) {
+    const targetElement = document.querySelector(target);
+    if (targetElement) {
+        const offset = targetElement.offsetTop - (0.3 * window.innerHeight);
+        window.scrollTo({
+            top: offset,
+            behavior: "smooth"
+        });
+    }
+}
+
+//Attach click listeners to nav links
+const navLinks = document.querySelectorAll(".header a");
+navLinks.forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const target = link.getAttribute("href");
+        smoothScroll(target);
+    });
+});
+
+
+
+/*
  * Hamburger menu logic
  */ 
 const hamburger = document.querySelector(".hamburger");

@@ -1,13 +1,12 @@
 # Major #
 
+- Arrow not fading out in mobile
+- Sections not animating in mobile
 - Swap projects n education
 - change background less dull
 - change AK logo
 - add tab logo
 - splash screen on load
-- fix loading to top of page
-- Fading in / animations when page load
-- Things fading in / sliding up when initial scrolling down / small animations
 - Implement animated background (reacts to mouse movement, scrolling, etc)
 
 # Minor #
