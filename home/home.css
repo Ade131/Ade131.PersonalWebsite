@@ -440,15 +440,16 @@ a {
 
 /* About Section */
 
-#About {
+#About .about-me {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 90%;
-    margin: 50px auto;
+    margin: auto auto auto 200px;
     padding: 0px;
-    max-width: 900px;
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.8s ease-in-out;
 }
 
 #About .title-content-wrapper {
@@ -466,23 +467,17 @@ a {
 }
 
 #About .main-content-wrapper {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
 
 #About .about-text {
-    width: 70%;
+    width: 60%;
     max-width: 450px;
     box-sizing: border-box;
     flex-shrink: 0;
     line-height: 1.8;
-}
-
-#About .about-image {
-    width: 28%;
-    margin-left: 2%;
-    box-sizing: border-box;
-    flex-shrink: 0;
 }
 
 #About .tech-list {
@@ -517,37 +512,70 @@ a {
     }
 }
 
-/* Education Section */
+/* About images */
 
-#Education {
+#About .about-image {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
-    width: 80%;
-    margin: 50px auto;
-    padding: 0px;
-    max-width: 900px;
+    margin-left: 50px;
+    width: 40%;
+    height: 100%;
 }
 
-#Education .title-content-wrapper {
-    display: flex;
-    align-items: baseline;
+#About .polaroid {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    opacity: 0;
 }
 
-#Education .content-small-monospace {
-    font-size: 20px;
+#About .polaroid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid rgb(221, 221, 221);
+    border-bottom: 20px solid rgb(221, 221, 221);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* first photo */
+#About .polaroid:first-child img {
+    transform: rotate(-10deg);
+    top: 20px;
+    left: -10px;
+    z-index: 1;
+}
+/* second photo */
+#About .polaroid:nth-child(2) img {
+    position: relative;
+    transform: rotate(5deg);
+    top: -30px
+  }
+/*third photo */
+#About .polaroid:last-child img {
+    position: relative;
+    transform: rotate(-5deg);
+    bottom: 50px;
 }
 
-#Education .content-medium {
-    color: var(--text-color-lightbluegrey);
-    margin: 0;
+/* Polaroid Animation */
+@keyframes place-down {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-#Education .main-content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+#About .place-down {
+    animation: place-down 0.8s ease forwards;
 }
+
 
 /* Projects Section */
 
@@ -581,7 +609,39 @@ a {
     flex-wrap: wrap;
 }
 
-/* Projects Section */
+/* Education Section */
+
+#Education {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin: 50px auto;
+    padding: 0px;
+    max-width: 900px;
+}
+
+#Education .title-content-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+#Education .content-small-monospace {
+    font-size: 20px;
+}
+
+#Education .content-medium {
+    color: var(--text-color-lightbluegrey);
+    margin: 0;
+}
+
+#Education .main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Contact Section */
 
 #Contact {
     display: flex;

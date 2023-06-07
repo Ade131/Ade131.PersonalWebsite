@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function isElementInViewport(element) {
     var rect = element.getBoundingClientRect();
     var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    var topThreshold = windowHeight * 0.2; // 20% of the window height
+    var topThreshold = windowHeight * 0.2; //  sections appear when they reach 20% of the window height
   
     return (
       rect.top <= windowHeight - topThreshold &&
@@ -65,9 +65,26 @@ function fadeInSectionsOnScroll() {
     const sections = document.querySelectorAll(".section");
     sections.forEach(function(section) {
         if (isElementInViewport(section)) {
+            if (section.id === "About") {
+                fadeInAboutSection();
+            }
             section.classList.add("fade-in");
             section.classList.add("slide-up");
         }
+    });
+}
+
+//Fade in About section
+function fadeInAboutSection() {
+    const aboutText = document.querySelector("#About .about-text");
+    const aboutTitle = document.querySelector("#About .title-content-wrapper");
+    const images = document.querySelectorAll("#About .polaroid");
+    aboutText.classList.add("fade-in");
+    aboutTitle.classList.add("fade-in");
+    images.forEach(function (image, index) {
+        setTimeout(function() {
+            image.classList.add("place-down");
+        }, (index + 1) * 700); //Delay each image animation
     });
 }
 
@@ -81,6 +98,7 @@ window.addEventListener("scroll", fadeInSectionsOnScroll);
 var prevScrollPos = window.pageYOffset;
 const header = document.querySelector(".header");
 const arrows = document.querySelector(".arrow-wrapper");
+const about = document.querySelector(".about-me");
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
@@ -89,6 +107,8 @@ window.onscroll = function() {
         //At the top of the page
         header.classList.remove("shadow");
         header.classList.remove("hide");
+        about.style.transform = "translateY(30%)";
+        about.style.opacity = "0";
     }
 
     if (prevScrollPos > currentScrollPos) {
@@ -100,6 +120,8 @@ window.onscroll = function() {
         header.classList.add("hide");
         arrows.classList.add("arrow-fade-out");
         arrows.classList.remove("fade-in")
+        about.style.transform = "translateY(0)";
+        about.style.opacity = "1";
     }
     prevScrollPos = currentScrollPos;
     };

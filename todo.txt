@@ -1,13 +1,18 @@
 # Major #
 
-- Swap projects n education
+- Add content
+- Fix polaroids for mobile view
+- Arrow not centered on mobile
 - change background less dull
 - change AK logo
 - add tab logo
 - splash screen on load
+- if scroll before arrow appeaers, doesn't disappear
 - Implement animated background (reacts to mouse movement, scrolling, etc)
 
 # Minor #
 
+- Mobile has to scroll a lot to trigger section animation
+- Update CV
 - Change transform from scale to move on icons hover over
 - Hamburger overlay goes under the header
