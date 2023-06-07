@@ -2,7 +2,6 @@
 
 - Add project content
 
-
 - Scroll arrow not centered on mobile
 - change background less dull
 - change AK logo
