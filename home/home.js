@@ -210,7 +210,9 @@ function closeMenu() {
 }
 
 
-
+/*
+ * Project Selection Indicator
+ */
 const projectList = document.querySelector("#Projects .project-list");
 const selectionIndicator = document.querySelector("#Projects .selection-indicator");
 
@@ -225,8 +227,10 @@ projectList.addEventListener("click", (event) => {
 
     const topOffset = selectedItem.offsetTop;
     const itemHeight = selectedItem.offsetHeight;
-    selectionIndicator.style.top = `${topOffset}px`;
-    selectionIndicator.style.height = `${itemHeight}px`;
+    const shorterHeight = 20;
+    const centerOffset = (itemHeight - shorterHeight) / 2;
+    selectionIndicator.style.top = `${topOffset + centerOffset}px`;
+    selectionIndicator.style.height = `${shorterHeight}px`;
   }
 });
 

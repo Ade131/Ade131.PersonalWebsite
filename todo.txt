@@ -1,16 +1,15 @@
 # Major #
 
-- Add content
-- Arrow not centered on mobile
+- Add project content
+
+
+- Scroll arrow not centered on mobile
 - change background less dull
 - change AK logo
 - add tab logo
 - splash screen on load
 - if scroll before arrow appears, doesn't disappear
 - Implement animated background (reacts to mouse movement, scrolling, etc)
-
-# Minor #
-
 - Mobile has to scroll a lot to trigger section animation
 - Update CV
 - Hamburger overlay goes under the header
