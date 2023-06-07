@@ -1,7 +1,5 @@
 # Major #
 
-- Arrow not fading out in mobile
-- Sections not animating in mobile
 - Swap projects n education
 - change background less dull
 - change AK logo
