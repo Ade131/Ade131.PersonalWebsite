@@ -443,12 +443,22 @@ a {
 
 /* About Section */
 
+#About {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    margin: 50px auto;
+    padding: 0px;
+    max-width: fit-content;
+}
+
 #About .about-me {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: auto auto auto 200px;
     padding: 0px;
     transform: translateY(0);
     opacity: 1;
@@ -470,9 +480,9 @@ a {
 }
 
 #About .main-content-wrapper {
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #About .about-text {
@@ -511,7 +521,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-left: 100px;
+    margin-left: 50px;
     width: 40%;
     height: 100%;
 }
@@ -535,6 +545,7 @@ a {
 
 /* first photo */
 #About .polaroid:first-child img {
+    position: relative;
     transform: rotate(-10deg);
     top: 20px;
     left: -10px;
@@ -545,6 +556,7 @@ a {
 #About .polaroid:nth-child(2) img {
     position: relative;
     transform: rotate(5deg);
+    left: 60px;
     top: -30px
 }
 
@@ -616,6 +628,7 @@ a {
         position: relative;
         transform: rotate(5deg);
         top: -30px;
+        left: 0;
     }
 
     /*third photo */
