@@ -133,7 +133,7 @@ window.onscroll = function() {
 function smoothScroll(target) {
     const targetElement = document.querySelector(target);
     if (targetElement) {
-        const offset = targetElement.offsetTop - (0.3 * window.innerHeight);
+        const offset = targetElement.offsetTop - (0.4 * window.innerHeight);
         window.scrollTo({
             top: offset,
             behavior: "smooth"
