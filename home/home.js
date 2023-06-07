@@ -6,6 +6,47 @@ window.onbeforeunload = function() {
 };
 
 /*
+ * Animated page load
+ */
+//wait for DOM content to load
+document.addEventListener("DOMContentLoaded", function() {
+    //Fade in header
+    const header = document.querySelector(".header");
+    header.classList.add("fade-in");
+
+    //Fade in nav items
+    const navItems = document.querySelectorAll(".nav-item");
+    navItems.forEach(function(navItem, index) {
+        setTimeout(function() {
+            navItem.classList.add("fade-in", "slide-down");
+        }, index * 150); //delay
+    });
+
+    //Fade in intro section
+    const introSections = document.querySelectorAll(".intro-content > div");
+    introSections.forEach(function(div, index) {
+        setTimeout(function() {
+            div.classList.add("fade-in");
+            div.classList.add("slide-up");
+        }, 600 + index * 100) //Delay
+    })
+
+    //Fade in links
+    const socialContent = document.querySelector(".socials");
+    const emailContent = document.querySelector(".email");
+    setTimeout(function() {
+        socialContent.classList.add("fade-in");
+        emailContent.classList.add("fade-in");
+    }, 700);
+
+    //Fade in arrow
+    const arrowWrapper = document.querySelector(".arrow-wrapper");
+    setTimeout(function() {
+        arrowWrapper.classList.add("fade-in");
+    }, 2500); //delay
+});
+
+/*
  * Header hide/show when scrolling
  * & Fading out scroll prompt arrows
  */

@@ -5,7 +5,7 @@
    --text-color-grey: rgb(211, 211, 255);
    --div-color-shadow: rgba(0, 0, 0, 0.5);
    --div-color-hover: rgba(145, 252, 220, 0.2);
-   --div-color-background: rgb(14, 25, 45);
+   --div-color-background: rgb(13, 25, 46);
    --div-color-header: rgba(14, 25, 45, 0.8);
    --div-color-navMenu: rgb(21, 34, 62);
    --font-sans: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;
@@ -14,7 +14,7 @@
 
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: 'smooth';
 }
 
 body {
@@ -52,6 +52,12 @@ a {
     -webkit-backdrop-filter: blur(3px);
     transition: transform 0.4s ease-in-out, box-shadow 0.5s ease-in-out;
     box-shadow: none;
+    opacity: 0;
+}
+
+.header.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .header.hide {
@@ -94,6 +100,18 @@ a {
 
 .nav-item {
     margin-left: 2rem;
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.nav-item.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav-item.slide-down {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
 }
 
 .nav-menu li a {
@@ -260,6 +278,8 @@ a {
     color: var(--text-color-lightbluegrey);
 }
 
+/* Intro Styling */ 
+
 #Intro {
     display: flex;
     flex-direction: column;
@@ -316,12 +336,27 @@ a {
     }
 }
 
+.intro-content > div {
+    opacity: 0;
+    transform: translateY(30%);
+    transition: 0.7s ease-in-out;
+}
+
+.intro-content > div.slide-up {
+    transform: translateY(0)
+}
+
+.intro-content > div.fade-in {
+    opacity: 1;
+}
+
 /* Animated Scroll Prompt */
 
 .arrow-wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    opacity: 0;
   }
   
 .arrow {
@@ -381,6 +416,11 @@ a {
 .arrow-fade-out {
     opacity: 0;
     transition: opacity 1s ease-in-out;
+}
+
+.arrow-wrapper.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* About Section */
@@ -567,6 +607,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
 }
 
 .socials a {
@@ -625,6 +666,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
 }
 
 .email a {
@@ -675,6 +717,12 @@ a {
     .email::after {
         display: none;
     }
+}
+
+.email.fade-in,
+.socials.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 
