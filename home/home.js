@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function isElementInViewport(element) {
     var rect = element.getBoundingClientRect();
     var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    var topThreshold = windowHeight * 0.2; //  sections appear when they reach 20% of the window height
+    var topThreshold = windowHeight * 0.15; //  sections appear when they reach 20% of the window height
   
     return (
       rect.top <= windowHeight - topThreshold &&

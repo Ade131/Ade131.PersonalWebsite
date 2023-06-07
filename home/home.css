@@ -17,6 +17,10 @@ html {
     scroll-behavior: 'smooth';
 }
 
+img {
+    image-rendering: optimizeQuality;
+  }
+
 body {
     background-color: var(--div-color-background);
     -webkit-font-smoothing: antialiased;
@@ -429,7 +433,7 @@ a {
 
 .section {
     opacity: 0;
-    transform: translateY(0);
+    transform: translateY(0%);
     transition: 0.8s ease-in-out;
 }
 
@@ -587,12 +591,17 @@ a {
 /* About section mobile */
 
 @media only screen and (max-width: 768px) {
+
+    #About {
+        flex-wrap: wrap;
+        align-content: center;
+    }
     #About .main-content-wrapper {
         flex-direction: column-reverse;
     }
 
     #About .about-me {
-        margin: 5px;
+        margin: 0;
     }
 
     #About .about-text {
@@ -600,9 +609,9 @@ a {
     }
 
     #About .about-image {
-        margin: 0;
         flex-direction: row;
         margin-top: 50px;
+        margin-left: 0;
         align-items: center;
         width: 100%;
     }
