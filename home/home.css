@@ -883,6 +883,50 @@ a {
     left: -100px;
 }
 
+/* Wheel of fortune Project Styles */
+#Projects .project-view .wof-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px; /* adjust as needed */
+}
+
+#Projects .project-view .wof-images img {
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* first photo */
+#Projects .wof-images:first-child img {
+    position: relative;
+    height: 170px;
+    top: 170px;
+    left: -80px;
+}
+
+/* second photo */
+#Projects .wof-images:nth-child(2) img {
+    position: relative;
+    height: 250px;
+    top: 40px;
+    left: -10px;
+    z-index: 1;
+}
+
+/*third photo */
+#Projects .wof-images:last-child img {
+    position: relative;
+    height: 170px;
+    top: -85px;
+    left: -30px;
+}
+
 
 
 
