@@ -3,6 +3,7 @@
 - Add project content
 
 - Scroll arrow not centered on mobile
+- Fix resume button in nav bar
 - change background less dull
 - change AK logo
 - add tab logo
