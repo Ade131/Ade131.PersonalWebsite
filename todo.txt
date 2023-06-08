@@ -1,6 +1,9 @@
 # Major #
 
-- Add project content
+- Add final project content
+- fix project layout when adjusting window
+- Animate project transitions
+- Add project mobile view
 
 - Scroll arrow not centered on mobile
 - Fix resume button in nav bar
