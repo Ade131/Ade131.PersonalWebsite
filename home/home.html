@@ -119,17 +119,65 @@
                     <div class="main-content-wrapper">
                         <div class="project-list">
                             <ul>
-                                <li class="project-item"><p class="content-small"><i class="fa-brands fa-square-js"></i> Personal Website</p></li>
-                                <li class="project-item"><p class="content-small"><i class="fab fa-php"></i> Visneti</p></li>
-                                <li class="project-item"><p class="content-small"><i class="fa-brands fa-swift"></i> Wheel of Fortune</p></li>
-                                <li class="project-item"><p class="content-small"><i class="fa-brands fa-square-js"></i> Submarine Chase</p></li>
-                                <li class="project-item"><p class="content-small"><i class="fa-solid fa-code"></i> And more...</p></li>
+                                <li class="project-item" data-project="personal-website">
+                                    <p class="content-small"><i class="fa-brands fa-square-js"></i> Personal Website</p>
+                                </li>
+                                <li class="project-item" data-project="visneti">
+                                    <p class="content-small"><i class="fab fa-php"></i> Visneti</p>
+                                </li>
+                                <li class="project-item" data-project="wheel-of-fortune">
+                                    <p class="content-small"><i class="fa-brands fa-swift"></i> Wheel of Fortune</p>
+                                </li>
+                                <li class="project-item" data-project="submarine-chase">
+                                    <p class="content-small"><i class="fa-brands fa-square-js"></i> Submarine Chase</p>
+                                </li>
+                                <li class="project-item" data-project="more-projects">
+                                    <p class="content-small"><i class="fa-solid fa-code"></i> And more...</p>
+                                </li>
                             </ul>
                             <div class="selection-indicator"></div>
-                        </div>
+                        </div>                     
                         <div class="project-view">
-                            <div class="project-content">
-                                <!--Content here for each project will be dynamically added-->
+                            <div class="project-info-container">
+                                <div id="no-selection" class="project-info display">
+                                    <h2>No Selection</h2>
+                                    <p>No project has been selected</p>
+                                </div>
+                                <div id="personal-website" class="project-info">
+                                        <div class="project-description">
+                                            <p class="content-small">The website you're currently on! A personal project to teach myself more about web development. Built by hand in VSCode with HTML, CSS, and Javascript. Hosted with Github Pages.</p>
+                                        </div>
+                                        <div class="project-images">
+                                           <div class="website-images"><img src="../assets/projects/personalsite/vsc.png" alt="VSCode"></div>
+                                           <div class="website-images"><img src="../assets/projects/personalsite/github.png" alt="Github"></div>
+                                           <div class="website-images"><img src="../assets/projects/personalsite/inspect.png" alt="Inspect"></div>
+                                        </div>
+                                </div>
+                                <div id="visneti" class="project-info">
+                                    <div class="project-description">
+                                        <p class="content-small">A website project built as part of a team that allows users to browse venues for nights out. Using client-server architecture, with a HTML/CSS frontend and PHP/SQL backend.</p>
+                                    </div>
+                                    <div class="project-images">
+                                        <div class="visneti-images"><img src="../assets/projects/visneti/visneti1.png" alt = "Visneti"></div>
+                                        <div class="visneti-images"><img src="../assets/projects/visneti/visneti2.png" alt = "Visneti"></div>
+                                        <div class="visneti-images"><img src="../assets/projects/visneti/visneti3.png" alt = "Visneti"></div>
+                                    </div>
+                                </div>
+                                <div id="wheel-of-fortune" class="project-info">
+                                    <!-- Content for Wheel of Fortune project -->
+                                    <h2>Wheel of Fortune</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <div id="submarine-chase" class="project-info">
+                                    <!-- Content for Submarine Chase project -->
+                                    <h2>Submarine Chase</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <div id="more-projects" class="project-info">
+                                    <!-- Content for more projects -->
+                                    <h2>More Projects</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

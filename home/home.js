@@ -212,9 +212,13 @@ function closeMenu() {
 
 /*
  * Project Selection Indicator
+ * Change project content depending on selection
  */
-const projectList = document.querySelector("#Projects .project-list");
-const selectionIndicator = document.querySelector("#Projects .selection-indicator");
+
+const projectList = document.querySelector(".project-list");
+const selectionIndicator = document.querySelector(".selection-indicator");
+const projectView = document.querySelector(".project-view");
+const projectInfos = projectView.querySelectorAll(".project-info");
 
 projectList.addEventListener("click", (event) => {
   const selectedItem = event.target.closest("li");
@@ -225,13 +229,34 @@ projectList.addEventListener("click", (event) => {
     });
     selectedItem.classList.add("selected");
 
+    const selectedProject = selectedItem.getAttribute("data-project");
+
+    projectInfos.forEach((projectInfo) => {
+        projectInfo.classList.remove('display');
+    });
+    
+    const selectedProjectInfo = projectView.querySelector(`#${selectedProject}`);
+    if (selectedProjectInfo) {
+        selectedProjectInfo.classList.add('display');
+    } else {
+        // Show the "No Selection" info if project not found
+        const noSelectionInfo = projectView.querySelector("#no-selection");
+        if (noSelectionInfo) {
+            noSelectionInfo.classList.add('display');
+        }
+    }
+
     const topOffset = selectedItem.offsetTop;
     const itemHeight = selectedItem.offsetHeight;
     const shorterHeight = 20;
     const centerOffset = (itemHeight - shorterHeight) / 2;
     selectionIndicator.style.top = `${topOffset + centerOffset}px`;
     selectionIndicator.style.height = `${shorterHeight}px`;
+
+    selectionIndicator.style.opacity = "1";
   }
 });
+
+
 
 

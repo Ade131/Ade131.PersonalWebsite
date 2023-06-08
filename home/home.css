@@ -18,10 +18,6 @@ html {
     scroll-behavior: 'smooth';
 }
 
-img {
-    image-rendering: optimizeQuality;
-  }
-
 body {
     background-color: var(--div-color-background);
     -webkit-font-smoothing: antialiased;
@@ -695,7 +691,6 @@ a {
   #Projects .main-content-wrapper {
     display: flex;
     justify-content: flex-start;
-    align-items: stretch;
     margin-top: 20px;
     height: 100%;
   }
@@ -706,6 +701,7 @@ a {
     flex-direction: column;
     width: 30%;
     position: relative;
+    justify-content: center;
   }
 
   #Projects .project-list .content-small {
@@ -761,12 +757,8 @@ a {
     left: 0;
     width: 1px;
     background-color: var(--text-color-cyan);
-    opacity: 1;
+    opacity: 0;
     transition: 0.3s ease;
-}
-
-#Projects .project-list .selected .selection-indicator {
-  opacity: 1;
 }
   
   /* Project Content */
@@ -774,8 +766,123 @@ a {
     display: flex;
     flex-direction: column;
     width: 70%;
-    background-color: var(--text-color-cyan);
+    background-color: var(--div-color-shadow);
+    overflow: visible;
+    justify-content: center;
   }
+
+  #Projects .project-view .project-info {
+    overflow: visible;
+    display: none;
+}
+
+#Projects .project-view .project-info.display {
+    display: block;
+}
+
+/* Project Details */
+#Projects .project-view .project-details {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: visible;
+}
+
+#Projects .project-view .project-description {
+    flex: 1;
+    padding-right: 20px; /* adjust as needed */
+    max-width: 50%;
+}
+
+/* Personal Website Project Styles */
+#Projects .project-view .website-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px; /* adjust as needed */
+}
+
+#Projects .project-view .website-images img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid var(--text-color-darkbluegrey);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* first photo */
+#Projects .website-images:first-child img {
+    position: relative;
+    top: 150px;
+    left: -80px;
+    z-index: 2;
+}
+
+/* second photo */
+#Projects .website-images:nth-child(2) img {
+    position: relative;
+    top: 40px;
+    z-index: 1;
+}
+
+/*third photo */
+#Projects .website-images:last-child img {
+    position: relative;
+    top: -100px;
+    left: -60px;
+}
+
+/* Visneti Project Styles */
+#Projects .project-view .visneti-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px; /* adjust as needed */
+}
+
+#Projects .project-view .visneti-images img {
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* first photo */
+#Projects .visneti-images:first-child img {
+    position: relative;
+    top: 170px;
+    left: -140px;
+    z-index: 2;
+}
+
+/* second photo */
+#Projects .visneti-images:nth-child(2) img {
+    position: relative;
+    top: 40px;
+    left: -10px;
+    z-index: 1;
+}
+
+/*third photo */
+#Projects .visneti-images:last-child img {
+    position: relative;
+    top: -85px;
+    left: -100px;
+}
+
 
 
 
