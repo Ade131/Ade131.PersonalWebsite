@@ -907,6 +907,7 @@ a {
     position: relative;
     height: 170px;
     top: 170px;
+    border: 1px solid var(--text-color-darkbluegrey);
     left: -80px;
 }
 
@@ -924,7 +925,46 @@ a {
     position: relative;
     height: 170px;
     top: -85px;
+    border: 1px solid var(--text-color-darkbluegrey);
     left: -30px;
+}
+
+/* Submarine Game Project Styles */
+#Projects .project-view .sub-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px; /* adjust as needed */
+}
+
+#Projects .project-view .sub-images img {
+    object-fit: cover;
+    border: 1px solid var(--text-color-darkbluegrey);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* first photo */
+#Projects .sub-images:first-child img {
+    position: relative;
+    height: 220px;
+    width: 330px;
+    top: 120px;
+    left: 10px;
+    z-index: 1;
+}
+
+/*second photo */
+#Projects .sub-images:last-child img {
+    position: relative;
+    height: 220px;
+    top: -85px;
+    left: 50px;
 }
 
 
