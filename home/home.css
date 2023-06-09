@@ -1042,6 +1042,18 @@ a {
 }
 
 
+/* Move images as screen gets thinner so they don't overlap text */
+@media (max-width: 900px) {
+    #Projects .project-view .website-images img,
+    #Projects .project-view .visneti-images img,
+    #Projects .project-view .wof-images img,
+    #Projects .project-view .sub-images img,
+    #Projects .project-view .moreproj-images img {
+        left: 50px;
+    }
+}
+
+
 
 
 
