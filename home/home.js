@@ -40,9 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Fade in arrow
     const arrowWrapper = document.querySelector(".arrow-wrapper");
+    
     setTimeout(function () {
+        if(window.pageYOffset < 170) {
         arrowWrapper.classList.add("fade-in");
-    }, 2500); //delay
+        }
+    }, 2200); //delay
 });
 
 /*
@@ -142,7 +145,7 @@ function smoothScroll(target) {
 }
 
 //Attach click listeners to nav links
-const navLinks = document.querySelectorAll(".header a");
+const navLinks = document.querySelectorAll(".nav-item a:not(.resume)"); // Exclude .resume
 navLinks.forEach(link => {
     link.addEventListener("click", function (event) {
         event.preventDefault();
@@ -150,6 +153,7 @@ navLinks.forEach(link => {
         smoothScroll(target);
     });
 });
+
 
 
 
