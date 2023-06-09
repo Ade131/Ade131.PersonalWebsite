@@ -2,9 +2,9 @@
 
 - Add final project content
 - fix project layout when adjusting window
-- Animate project transitions
 - Add project mobile view
 
+- Make intro animate on scroll down / back up (fix spacing between sections)
 - Scroll arrow not centered on mobile
 - Fix resume button in nav bar
 - change background less dull

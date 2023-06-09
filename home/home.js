@@ -211,52 +211,83 @@ function closeMenu() {
 
 
 /*
- * Project Selection Indicator
- * Change project content depending on selection
+ * Project Selection Indicator & animation for project view
  */
 
 const projectList = document.querySelector(".project-list");
 const selectionIndicator = document.querySelector(".selection-indicator");
 const projectView = document.querySelector(".project-view");
-const projectInfos = projectView.querySelectorAll(".project-info");
+const projectInfos = Array.from(projectView.querySelectorAll(".project-info"));
+const noSelectionInfo = projectView.querySelector("#no-selection");
+
+let lastSelectedItem = null;
+let lastSelectedInfo = noSelectionInfo;
+lastSelectedInfo.style.display = 'block';
 
 projectList.addEventListener("click", (event) => {
-  const selectedItem = event.target.closest("li");
-  if (selectedItem) {
-    const listItems = projectList.querySelectorAll("li");
-    listItems.forEach((item) => {
-      item.classList.remove("selected");
-    });
-    selectedItem.classList.add("selected");
+    const selectedItem = event.target.closest("li");
+    if (selectedItem) {
+        const listItems = Array.from(projectList.querySelectorAll("li"));
+        listItems.forEach((item) => {
+            item.classList.remove("selected");
+        });
+        selectedItem.classList.add("selected");
 
-    const selectedProject = selectedItem.getAttribute("data-project");
+        const selectedProject = selectedItem.getAttribute("data-project");
+        const selectedProjectInfo = projectView.querySelector(`#${selectedProject}`);
+        
+        if (lastSelectedItem !== selectedItem) {
+            if (lastSelectedInfo) {
+                let isAbove = listItems.indexOf(selectedItem) < listItems.indexOf(lastSelectedItem);
+                if (isAbove) {
+                    lastSelectedInfo.style.setProperty('--start-position', '0%');
+                    lastSelectedInfo.style.setProperty('--end-position', '100%');
+                } else {
+                    lastSelectedInfo.style.setProperty('--start-position', '0%');
+                    lastSelectedInfo.style.setProperty('--end-position', '-100%');
+                }
+                lastSelectedInfo.classList.add('deselected');
 
-    projectInfos.forEach((projectInfo) => {
-        projectInfo.classList.remove('display');
-    });
-    
-    const selectedProjectInfo = projectView.querySelector(`#${selectedProject}`);
-    if (selectedProjectInfo) {
-        selectedProjectInfo.classList.add('display');
-    } else {
-        // Show the "No Selection" info if project not found
-        const noSelectionInfo = projectView.querySelector("#no-selection");
-        if (noSelectionInfo) {
-            noSelectionInfo.classList.add('display');
+                new Promise((resolve) => {
+                    setTimeout(() => {
+                        lastSelectedInfo.style.display = 'none';
+                        lastSelectedInfo.classList.remove('deselected', 'selected');
+                        resolve();
+                    }, 350);
+                }).then(() => {
+                    if (selectedProjectInfo) {
+                        selectedProjectInfo.style.display = 'block';
+                        if (isAbove) {
+                            selectedProjectInfo.style.setProperty('--start-position', '-100%');
+                            selectedProjectInfo.style.setProperty('--end-position', '0%');
+                        } else {
+                            selectedProjectInfo.style.setProperty('--start-position', '100%');
+                            selectedProjectInfo.style.setProperty('--end-position', '0%');
+                        }
+                        selectedProjectInfo.classList.add('selected');
+                        lastSelectedInfo = selectedProjectInfo;
+                    } else {
+                        lastSelectedInfo = null;
+                    }
+                });
+            }
         }
+
+        lastSelectedItem = selectedItem;
+
+        const topOffset = selectedItem.offsetTop;
+        const itemHeight = selectedItem.offsetHeight;
+        const shorterHeight = 20;
+        const centerOffset = (itemHeight - shorterHeight) / 2;
+        selectionIndicator.style.top = `${topOffset + centerOffset}px`;
+        selectionIndicator.style.height = `${shorterHeight}px`;
+        selectionIndicator.style.opacity = "1";
     }
 
-    const topOffset = selectedItem.offsetTop;
-    const itemHeight = selectedItem.offsetHeight;
-    const shorterHeight = 20;
-    const centerOffset = (itemHeight - shorterHeight) / 2;
-    selectionIndicator.style.top = `${topOffset + centerOffset}px`;
-    selectionIndicator.style.height = `${shorterHeight}px`;
-
-    selectionIndicator.style.opacity = "1";
-  }
+    document.addEventListener("DOMContentLoaded", (event) => {
+        const firstItem = document.querySelector('.project-item');
+        firstItem.click();
+    });
+    
+    
 });
-
-
-
-
