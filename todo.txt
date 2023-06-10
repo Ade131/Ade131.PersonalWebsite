@@ -1,18 +1,16 @@
-# Major #
+# Todo #
 
-- Add final project content
-- fix project layout when adjusting window
-- Add project mobile view
-
-- Make intro animate on scroll down / back up (fix spacing between sections)
-- Scroll arrow not centered on mobile
-- Fix resume button in nav bar
+- Add projects mobile view
 - change background less dull
 - change AK logo
 - add tab logo
 - splash screen on load
-- if scroll before arrow appears, doesn't disappear
 - Implement animated background (reacts to mouse movement, scrolling, etc)
-- Mobile has to scroll a lot to trigger section animation
 - Update CV
+
+# Bugs #
+
+- 'noproj' icons shift when sliding out
 - Hamburger overlay goes under the header
+- Scroll arrow not centered on mobile
+- Remove 'about me' fading out at the top of the screen (who cares)

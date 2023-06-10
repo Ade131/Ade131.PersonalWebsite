@@ -4,6 +4,7 @@
     --text-color-lightbluegrey: rgb(206, 214, 243);
     --text-color-grey: rgb(211, 211, 255);
     --div-color-shadow: rgba(0, 0, 0, 0.5);
+    --div-color-blockbg: rgba(0, 0, 0, 0.25);
     --div-color-hover: rgba(145, 252, 220, 0.2);
     --div-color-background: rgb(13, 25, 46);
     --div-color-header: rgba(14, 25, 45, 0.8);
@@ -358,14 +359,13 @@ a {
     align-items: flex-end;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    width: 100%
 }
 
 .arrow {
     opacity: 0;
     position: absolute;
-    left: 50%;
     bottom: 3%;
-    transform-origin: 50% 50%;
     transform: translate3d(-50%, -50%, 0);
 }
 
@@ -425,6 +425,7 @@ a {
 .arrow-wrapper.fade-in {
     opacity: 1;
 }
+
 
 /* Section styling */
 
@@ -593,6 +594,7 @@ a {
         flex-wrap: wrap;
         align-content: center;
     }
+
     #About .main-content-wrapper {
         flex-direction: column-reverse;
     }
@@ -672,50 +674,50 @@ a {
     margin: 50px auto;
     padding: 0px;
     max-width: 900px;
-  }
-  
-  #Projects .title-content-wrapper {
+}
+
+#Projects .title-content-wrapper {
     display: flex;
     align-items: baseline;
-  }
-  
-  #Projects .content-small-monospace {
+}
+
+#Projects .content-small-monospace {
     font-size: 20px;
-  }
-  
-  #Projects .content-medium {
+}
+
+#Projects .content-medium {
     color: var(--text-color-lightbluegrey);
     margin: 0;
-  }
-  
-  #Projects .main-content-wrapper {
+}
+
+#Projects .main-content-wrapper {
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
     height: 100%;
-  }
-  
-  /* Project List */
-  #Projects .project-list {
+}
+
+/* Project List */
+#Projects .project-list {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 25%;
     position: relative;
     justify-content: center;
-  }
+}
 
-  #Projects .project-list .content-small {
+#Projects .project-list .content-small {
     line-height: 0;
     font-size: 16px;
 }
 
-  #Projects .project-list ul {
+#Projects .project-list ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
+}
 
-  #Projects .project-list li {
+#Projects .project-list li {
     cursor: pointer;
     padding: 2%;
     color: var(--text-color-lightbluegrey);
@@ -724,14 +726,14 @@ a {
     position: relative;
     display: flex;
     transition: color 0.3s ease;
-  }
+}
 
-  #Projects .project-list li .content-small {
+#Projects .project-list li .content-small {
     transition: color 0.3s ease;
-  }
+}
 
-  /*Line separator */
-  #Projects .project-list li:not(:last-child)::before {
+/*Line separator */
+#Projects .project-list li:not(:last-child)::before {
     content: "";
     position: absolute;
     left: 0;
@@ -739,15 +741,15 @@ a {
     width: 65%;
     height: 1px;
     background-color: var(--div-color-separator);
-  }
+}
 
-  #Projects .project-list li:hover .content-small {
+#Projects .project-list li:hover .content-small {
     color: var(--text-color-cyan);
-  }
+}
 
-  #Projects .project-list li.selected .content-small {
+#Projects .project-list li.selected .content-small {
     color: var(--text-color-cyan);
-  }
+}
 
 /* Indicator for selected project */
 #Projects .selection-indicator {
@@ -760,18 +762,19 @@ a {
     opacity: 0;
     transition: 0.3s ease;
 }
-  
-  /* Project Content */
-  #Projects .project-view {
+
+/* Project Content */
+#Projects .project-view {
     display: flex;
     flex-direction: column;
     width: 70%;
-    background-color: var(--div-color-shadow);
+    background-color: var(--div-color-blockbg);
     overflow: visible;
     justify-content: center;
-  }
+    border-radius: 30px;
+}
 
-  #Projects .project-view .project-info {
+#Projects .project-view .project-info {
     overflow: visible;
     display: none;
 }
@@ -783,6 +786,7 @@ a {
 #Projects .project-view .project-info.deselected {
     animation: slide-out 0.4s forwards;
 }
+
 /* Animations for project info */
 
 @keyframes slide-in {
@@ -790,6 +794,7 @@ a {
         transform: translateY(var(--start-position));
         opacity: 0;
     }
+
     to {
         transform: translateY(var(--end-position));
         opacity: 1;
@@ -801,6 +806,7 @@ a {
         transform: translateY(var(--start-position));
         opacity: 1;
     }
+
     to {
         transform: translateY(var(--end-position));
         opacity: 0;
@@ -819,9 +825,52 @@ a {
 }
 
 #Projects .project-view .project-description {
-    flex: 1;
-    padding-right: 20px; /* adjust as needed */
     max-width: 50%;
+    padding-left: 20px;
+}
+
+#Projects .project-view .project-description .content-small {
+    line-height: 1.6;
+}
+
+/* No Project Selected Styles */
+#Projects .project-view .noproj-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    /* adjust as needed */
+}
+
+#Projects .project-view .noproj-images img {
+    height: 130px;
+    object-fit: cover;
+}
+
+/* first photo */
+#Projects .noproj-images:first-child img {
+    position: relative;
+    top: 120px;
+    left: -180px;
+}
+
+/* second photo */
+#Projects .noproj-images:nth-child(2) img {
+    position: relative;
+    top: 40px;
+    left: -60px;
+}
+
+/*third photo */
+#Projects .noproj-images:last-child img {
+    position: relative;
+    top: -50px;
+    left: -150px;
 }
 
 /* Personal Website Project Styles */
@@ -831,11 +880,11 @@ a {
     right: 0;
     bottom: 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px; /* adjust as needed */
+    gap: 10px;
+    /* adjust as needed */
 }
 
 #Projects .project-view .website-images img {
@@ -843,7 +892,7 @@ a {
     height: 200px;
     object-fit: cover;
     border: 1px solid var(--text-color-darkbluegrey);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* first photo */
@@ -876,24 +925,23 @@ a {
     right: 0;
     bottom: 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px; /* adjust as needed */
+    gap: 10px;
+    /* adjust as needed */
 }
 
 #Projects .project-view .visneti-images img {
     height: 250px;
     object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* first photo */
 #Projects .visneti-images:first-child img {
     position: relative;
-    top: 130px;
-    left: -120px;
+    top: 90px;
+    left: -150px;
     z-index: 2;
 }
 
@@ -901,7 +949,6 @@ a {
 #Projects .visneti-images:nth-child(2) img {
     position: relative;
     top: 40px;
-    left: 20px;
     z-index: 1;
 }
 
@@ -909,7 +956,7 @@ a {
 #Projects .visneti-images:last-child img {
     position: relative;
     top: -85px;
-    left: -70px;
+    left: -80px;
 }
 
 /* Wheel of fortune Project Styles */
@@ -919,16 +966,15 @@ a {
     right: 0;
     bottom: 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px; /* adjust as needed */
+    gap: 10px;
+    /* adjust as needed */
 }
 
 #Projects .project-view .wof-images img {
     object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* first photo */
@@ -936,7 +982,8 @@ a {
     position: relative;
     height: 170px;
     top: 140px;
-    left: -50px;
+    left: -20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--text-color-darkbluegrey);
 }
 
@@ -954,7 +1001,7 @@ a {
     position: relative;
     height: 170px;
     top: -85px;
-    left: -15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--text-color-darkbluegrey);
 }
 
@@ -965,17 +1012,17 @@ a {
     right: 0;
     bottom: 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px; /* adjust as needed */
+    gap: 10px;
+    /* adjust as needed */
 }
 
 #Projects .project-view .sub-images img {
     object-fit: cover;
     border: 1px solid var(--text-color-darkbluegrey);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* first photo */
@@ -1001,57 +1048,127 @@ a {
     right: 0;
     bottom: 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px; /* adjust as needed */
+    gap: 10px;
+    /* adjust as needed */
 }
 
 #Projects .project-view .moreproj-images img {
     object-fit: cover;
     border: 1px solid var(--text-color-darkbluegrey);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* first photo */
 #Projects .moreproj-images:first-child img {
     position: relative;
     height: 170px;
-    top: 140px;
-    left: -50px;
-    border: 1px solid var(--text-color-darkbluegrey);
+    top: 110px;
+    left: -80px;
+    z-index: 1;
 }
 
 /* second photo */
 #Projects .moreproj-images:nth-child(2) img {
     position: relative;
-    height: 270px;
+    height: 190px;
     top: 40px;
-    left: -20px;
-    z-index: 1;
 }
 
 /*third photo */
 #Projects .moreproj-images:last-child img {
     position: relative;
     height: 170px;
-    top: -85px;
+    top: -115px;
     left: -15px;
-    border: 1px solid var(--text-color-darkbluegrey);
 }
 
-
-/* Move images as screen gets thinner so they don't overlap text */
-@media (max-width: 900px) {
-    #Projects .project-view .website-images img,
-    #Projects .project-view .visneti-images img,
-    #Projects .project-view .wof-images img,
-    #Projects .project-view .sub-images img,
-    #Projects .project-view .moreproj-images img {
-        left: 50px;
+@media (max-width: 1300px) {
+    /* Submarine Game */
+    #Projects .project-view .sub-images:first-child img {
+        height: 160px;
     }
 }
+
+@media (max-width: 1200px) {
+    #Projects .project-view .visneti-images:first-child img {
+        left: -110px;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    /* No Project */
+    #Projects .project-view .noproj-images:first-child img {
+        left: -80px;
+    }
+    #Projects .project-view .noproj-images:nth-child(2) img {
+        left: 30px;
+    }
+    #Projects .project-view .noproj-images:last-child img {
+        left: -50px;
+    }
+
+    /* Personal Website */
+    #Projects .project-view .website-images:first-child img {
+        left: 0px;
+    }
+    #Projects .project-view .website-images:nth-child(2) img {
+        left: 60px;
+    }
+    #Projects .project-view .website-images:last-child img {
+        left: 10px;
+    }
+
+    /* Visneti */
+    #Projects .project-view .visneti-images:first-child img {
+        left: -80px;
+    }
+    #Projects .project-view .visneti-images:nth-child(2) img {
+        left: 60px;
+    }
+    #Projects .project-view .visneti-images:last-child img {
+        left: -30px;
+    }
+
+    /* Wheel of Fortune */
+    #Projects .project-view .wof-images:first-child img {
+        left: 20px;
+    }
+    #Projects .project-view .wof-images:nth-child(2) img {
+        left: 20px;
+    }
+    #Projects .project-view .wof-images:last-child img {
+        left: 60px; 
+    }
+
+    /* Submarine Game */
+    #Projects .project-view .sub-images:first-child img {
+        left: 60px;
+    }
+    #Projects .project-view .sub-images:last-child img {
+        left: 50px;
+    }
+
+    /* And More */
+    #Projects .project-view .moreproj-images:first-child img {
+        left: -10px;
+    }
+    #Projects .project-view .moreproj-images:nth-child(2) img {
+        left: 50px;
+    }
+    #Projects .project-view .moreproj-images:last-child img {
+        left: 45px;
+    }
+
+    #Projects .project-view .project-description {
+        max-width: 50%;
+        padding-left: 15px;
+    }
+}
+
 
 
 

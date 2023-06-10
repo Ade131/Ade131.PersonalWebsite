@@ -292,6 +292,4 @@ projectList.addEventListener("click", (event) => {
         const firstItem = document.querySelector('.project-item');
         firstItem.click();
     });
-    
-    
 });
