@@ -1,6 +1,8 @@
 # Todo #
 
-- Add projects mobile view
+- Add Content
+
+
 - change background less dull
 - change AK logo
 - add tab logo
@@ -13,4 +15,3 @@
 - 'noproj' icons shift when sliding out
 - Hamburger overlay goes under the header
 - Scroll arrow not centered on mobile
-- Remove 'about me' fading out at the top of the screen (who cares)
