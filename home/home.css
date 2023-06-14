@@ -315,7 +315,7 @@ a {
 @media only screen and (max-width: 768px) {
 
     #Intro {
-        padding: 70px 0 400px 0;
+        padding: 70px 0 100px 0;
         width: 90%
     }
 
@@ -592,6 +592,7 @@ a {
 @media only screen and (max-width: 768px) {
 
     #About {
+        margin: 100px auto auto auto;
         flex-wrap: wrap;
         align-content: center;
     }
@@ -1179,6 +1180,7 @@ a {
 @media screen and (max-width: 768px) {
 
     #Projects {
+        margin: 100px auto auto auto;
         width: 100%;
     }
 
@@ -1263,6 +1265,12 @@ a {
     flex-wrap: wrap;
 }
 
+@media screen and (max-width: 768px) {
+    #Education {
+        margin: 100px auto auto auto;
+    }
+}
+
 /* Contact Section */
 
 #Contact {
@@ -1293,6 +1301,12 @@ a {
 #Contact .main-content-wrapper {
     display: flex;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    #Contact {
+        margin: 100px auto auto auto;
+    }
 }
 
 /* Social icons & links styling */
