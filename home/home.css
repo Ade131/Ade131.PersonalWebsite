@@ -898,7 +898,7 @@ a {
 /* first photo */
 #Projects .website-images:first-child img {
     position: relative;
-    top: 150px;
+    top: 100px;
     left: -80px;
     z-index: 2;
 }
@@ -940,7 +940,7 @@ a {
 /* first photo */
 #Projects .visneti-images:first-child img {
     position: relative;
-    top: 90px;
+    top: 60px;
     left: -150px;
     z-index: 2;
 }
@@ -981,7 +981,7 @@ a {
 #Projects .wof-images:first-child img {
     position: relative;
     height: 170px;
-    top: 140px;
+    top: 110px;
     left: -20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--text-color-darkbluegrey);
@@ -1028,8 +1028,8 @@ a {
 /* first photo */
 #Projects .sub-images:first-child img {
     position: relative;
-    height: 180px;
-    top: 130px;
+    height: 165px;
+    top: 100px;
     left: -10px;
     z-index: 1;
 }
