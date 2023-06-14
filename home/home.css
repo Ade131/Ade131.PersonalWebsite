@@ -77,7 +77,7 @@ a {
     padding: 8px;
     border: 1px solid var(--text-color-cyan);
     border-radius: 50px;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .title:hover {
@@ -122,7 +122,7 @@ a {
     text-decoration: none;
     font-family: var(--font-mono);
     position: relative;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .nav-menu li:not(:last-child) a:hover {
@@ -135,14 +135,14 @@ a {
 
 .nav-link:hover span {
     color: var(--text-color-cyan);
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .nav-link.resume {
     padding: 8px;
     border: 1px solid var(--text-color-cyan);
     border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .nav-link.resume:hover {
@@ -237,10 +237,10 @@ a {
 
 .content {
     flex: 1;
-    padding: 80px 70px;
+    padding: 150px 80px;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -287,8 +287,7 @@ a {
     justify-content: flex-start;
     align-items: flex-start;
     width: 80%;
-    margin: 50px auto;
-    padding: 200px 0 200px 0;
+    padding: 200px 0 400px 0;
     max-width: 800px;
 }
 
@@ -315,7 +314,7 @@ a {
 @media only screen and (max-width: 768px) {
 
     #Intro {
-        padding: 70px 0 100px 0;
+        padding: 220px 0 200px 0;
         width: 90%
     }
 
@@ -452,8 +451,7 @@ a {
     justify-content: flex-start;
     align-items: flex-start;
     width: 90%;
-    margin: 100px auto;
-    padding: 0px;
+    padding-bottom: 150px;
     max-width: fit-content;
 }
 
@@ -592,7 +590,8 @@ a {
 @media only screen and (max-width: 768px) {
 
     #About {
-        margin: 100px auto auto auto;
+        padding-bottom: 100px;
+        width: 100%;
         flex-wrap: wrap;
         align-content: center;
     }
@@ -673,9 +672,8 @@ a {
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 100px auto;
-    padding: 0px;
     max-width: 900px;
+    padding-bottom: 150px;
 }
 
 #Projects .title-content-wrapper {
@@ -840,18 +838,27 @@ a {
     line-height: 1.6;
 }
 
+#Projects .project-view .project-description .content-small a {
+    color: var(--text-color-cyan);
+    border-bottom: 1px solid transparent;
+    transition: 0.2s ease-in-out;
+}
+
+#Projects .project-view .project-description .content-small a:hover {
+    border-bottom: 1px solid var(--text-color-cyan);
+}
+
 /* No Project Selected Styles */
 #Projects .project-view .noproj-images {
     position: absolute;
+    display: flex;
     top: 0;
     right: 0;
     bottom: 0;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    /* adjust as needed */
 }
 
 #Projects .project-view .noproj-images img {
@@ -862,22 +869,21 @@ a {
 /* first photo */
 #Projects .noproj-images:first-child img {
     position: relative;
-    top: 120px;
-    left: -180px;
+    top: 80px;
+    left: -150px;
 }
 
 /* second photo */
 #Projects .noproj-images:nth-child(2) img {
     position: relative;
-    top: 40px;
-    left: -60px;
+    left: -30px;
 }
 
 /*third photo */
 #Projects .noproj-images:last-child img {
     position: relative;
-    top: -50px;
-    left: -150px;
+    top: -90px;
+    left: -120px;
 }
 
 /* Personal Website Project Styles */
@@ -891,7 +897,6 @@ a {
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    /* adjust as needed */
 }
 
 #Projects .project-view .website-images img {
@@ -936,7 +941,6 @@ a {
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    /* adjust as needed */
 }
 
 #Projects .project-view .visneti-images img {
@@ -977,7 +981,6 @@ a {
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    /* adjust as needed */
 }
 
 #Projects .project-view .wof-images img {
@@ -1180,7 +1183,7 @@ a {
 @media screen and (max-width: 768px) {
 
     #Projects {
-        margin: 100px auto auto auto;
+        padding-bottom: 100px;
         width: 100%;
     }
 
@@ -1224,15 +1227,6 @@ a {
 
 }
 
-
-
-
-
-
-
-
-
-
 /* Education Section */
 
 #Education {
@@ -1241,8 +1235,7 @@ a {
     justify-content: flex-start;
     align-items: flex-start;
     width: 80%;
-    margin: 100px auto;
-    padding: 0px;
+    padding-bottom: 150px;
     max-width: 900px;
 }
 
@@ -1267,7 +1260,8 @@ a {
 
 @media screen and (max-width: 768px) {
     #Education {
-        margin: 100px auto auto auto;
+        padding-bottom: 100px;
+        width: 100%;
     }
 }
 
@@ -1279,8 +1273,7 @@ a {
     justify-content: flex-start;
     align-items: flex-start;
     width: 80%;
-    margin: 100px auto;
-    padding: 0px;
+    padding-bottom: 150px;
     max-width: 900px;
 }
 
@@ -1305,7 +1298,8 @@ a {
 
 @media screen and (max-width: 768px) {
     #Contact {
-        margin: 100px auto auto auto;
+        padding-bottom: 100px;
+        width: 100%;
     }
 }
 
@@ -1328,12 +1322,12 @@ a {
     color: var(--text-color-grey);
     font-size: 24px;
     text-decoration: none;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .socials a:hover {
     color: var(--text-color-cyan);
-    transform: translateY(-7%);
+    transform: translateY(-10%);
 }
 
 .socials::after {

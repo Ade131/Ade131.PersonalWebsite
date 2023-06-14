@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Fade in arrow
     const arrowWrapper = document.querySelector(".arrow-wrapper");
-    
+
     setTimeout(function () {
-        if(window.pageYOffset < 170) {
-        arrowWrapper.classList.add("fade-in");
+        if (window.pageYOffset < 170) {
+            arrowWrapper.classList.add("fade-in");
         }
     }, 2200); //delay
 });
@@ -236,6 +236,16 @@ let lastSelectedItem = null;
 let lastSelectedInfo = noSelectionInfo;
 lastSelectedInfo.style.display = 'block';
 
+// Animate 'no-selection' element on page load
+if (noSelectionInfo) {
+    setTimeout(() => {
+      noSelectionInfo.style.setProperty('--start-position', '-100%');
+      noSelectionInfo.style.setProperty('--end-position', '0%');
+      noSelectionInfo.classList.add('selected');
+    }, 100);
+  }
+
+//Eventlistener for the project list
 projectList.addEventListener("click", (event) => {
     if (isMobileView()) {
         return;
@@ -250,7 +260,7 @@ projectList.addEventListener("click", (event) => {
 
         const selectedProject = selectedItem.getAttribute("data-project");
         const selectedProjectInfo = projectView.querySelector(`#${selectedProject}`);
-        
+
         if (lastSelectedItem !== selectedItem) {
             if (lastSelectedInfo) {
                 let isAbove = listItems.indexOf(selectedItem) < listItems.indexOf(lastSelectedItem);
@@ -290,6 +300,7 @@ projectList.addEventListener("click", (event) => {
 
         lastSelectedItem = selectedItem;
 
+        //Moving the selection bar
         const topOffset = selectedItem.offsetTop;
         const itemHeight = selectedItem.offsetHeight;
         const shorterHeight = 20;
@@ -298,9 +309,4 @@ projectList.addEventListener("click", (event) => {
         selectionIndicator.style.height = `${shorterHeight}px`;
         selectionIndicator.style.opacity = "1";
     }
-
-    document.addEventListener("DOMContentLoaded", (event) => {
-        const firstItem = document.querySelector('.project-item');
-        firstItem.click();
-    });
 });

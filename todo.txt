@@ -2,7 +2,6 @@
 
 - Add Content
 
-
 - change background less dull
 - change AK logo
 - add tab logo
@@ -12,6 +11,5 @@
 
 # Bugs #
 
-- 'noproj' icons shift when sliding out
 - Hamburger overlay goes under the header
 - Scroll arrow not centered on mobile
