@@ -6,6 +6,14 @@ window.onbeforeunload = function () {
 };
 
 /*
+ * Function to check if the website is in mobile view
+ */
+function isMobileView() {
+    return window.innerWidth <= 768;
+}
+
+
+/*
  * Animated page load
  */
 document.addEventListener("DOMContentLoaded", function () {
@@ -229,6 +237,9 @@ let lastSelectedInfo = noSelectionInfo;
 lastSelectedInfo.style.display = 'block';
 
 projectList.addEventListener("click", (event) => {
+    if (isMobileView()) {
+        return;
+    }
     const selectedItem = event.target.closest("li");
     if (selectedItem) {
         const listItems = Array.from(projectList.querySelectorAll("li"));
