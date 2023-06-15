@@ -1227,9 +1227,19 @@ a {
     max-width: 900px;
 }
 
+#Education .education-content {
+    width: 100%
+}
+
 #Education .title-content-wrapper {
     display: flex;
     align-items: baseline;
+}
+
+#Education .content-small {
+        font-size: 16px;
+        font-family: var(--font-sans);
+        color: var(--text-color-darkbluegrey);
 }
 
 #Education .content-small-monospace {
@@ -1245,6 +1255,109 @@ a {
     display: flex;
     flex-wrap: wrap;
 }
+
+#Education .education-box {
+    width: 100%;
+    display: flex;
+    background: var(--div-color-blockbg);
+    border-radius: 30px;
+}
+
+#Education .left-box {
+    padding: 20px;
+    border-right: 1px solid var(--div-color-separator);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#Education .left-box .image-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Education .left-box img {
+    width: 100%;
+    height: auto;
+}
+
+#Education .right-box {
+    flex: 3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#Education .tabs {
+    position: relative;
+    height: 100%;
+  }
+  
+  #Education .tabs::before, .tabs::after {
+    content: "";
+    display: table;
+  }
+  
+  #Education .tabs::after {
+    clear: both;
+  }
+  
+  #Education .tab {
+    float: left;
+  }
+  
+  #Education .tab-switch {
+    display: none;
+  }
+  
+  #Education .tab-label {
+    position: relative;
+    display: block;
+    line-height: 2.75em;
+    height: 2.76em;
+    padding: 0 1.4em;
+    border-right: 1px solid var(--div-color-separator);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  #Education .tab-label.content-small:hover {
+    color: var(--text-color-cyan);
+    transition: color 0.3s;
+  }
+  
+  #Education .tab-content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 2.75em;
+    left: 0;
+    padding: 1.6rem;
+    background: var(--div-color-hover);
+    opacity: 0;
+    transition: all 0.35s;
+  }
+  
+  #Education .tab-switch:checked + .tab-label {
+    background: var(--div-color-hover);
+    color: white;
+    border-bottom: 0;
+    border-right: 1px solid var(--div-color-separator);
+    transition: all 0.35s;
+    z-index: 1;
+    top: -0.0625rem;
+  }
+  
+  #Education .tab-switch:checked + label + .tab-content {
+    z-index: 2;
+    opacity: 1;
+    transition: all 0.35s;
+  }
+  
 
 @media screen and (max-width: 768px) {
     #Education {
