@@ -2,12 +2,14 @@
 
 - Add Content
 
+- Fix Projects view on macbook 50% width
 - change background less dull
 - change AK logo
 - add tab logo
 - splash screen on load
 - Implement animated background (reacts to mouse movement, scrolling, etc)
 - Update CV
+
 
 # Bugs #
 
