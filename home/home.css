@@ -1264,6 +1264,7 @@ a {
 }
 
 #Education .left-box {
+    flex: 1;
     padding: 20px;
     border-right: 1px solid var(--div-color-separator);
     display: flex;
@@ -1273,11 +1274,12 @@ a {
 
 #Education .left-box .image-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
 }
 
 #Education .left-box img {
-    width: 100%;
+    width: 30%;
+
     height: auto;
 }
 
