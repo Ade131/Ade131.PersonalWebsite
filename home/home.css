@@ -1168,6 +1168,121 @@ a {
     }
 }
 
+/* Moving images to not overlap text on smaller windows */
+@media (max-width: 975px) {
+    /* No Project */
+    #Projects .project-view .noproj-images:first-child img {
+        left: -30px;
+    }
+    #Projects .project-view .noproj-images:nth-child(2) img {
+        left: 0px;
+    }
+    #Projects .project-view .noproj-images:last-child img {
+        left: -40px;
+    }
+
+    /* Personal Website */
+    #Projects .project-view .website-images:first-child img {
+        left: -40px;
+        height: 50%;
+        width: 130%;
+    }
+    #Projects .project-view .website-images:nth-child(2) img {
+        left: -20px;
+        top: 0px;
+        height: 50%;
+        width: 130%;
+    }
+    #Projects .project-view .website-images:last-child img {
+        height: 50%;
+        width: 130%;
+        left: -20px;
+    }
+
+    /* Visneti */
+    #Projects .project-view .visneti-images:first-child img {
+        left: 0px;
+        scale: 70%;
+    }
+    #Projects .project-view .visneti-images:nth-child(2) img {
+        display: none;
+    }
+    #Projects .project-view .visneti-images:last-child img {
+        left: 0px;
+        scale: 70%;
+    }
+
+    /* Wheel of Fortune */
+    #Projects .project-view .wof-images:first-child img {
+        left: 70px;
+        scale: 70%
+    }
+    #Projects .project-view .wof-images:nth-child(2) img {
+        left: 0px;
+        top: 0px;
+        scale: 80%;
+    }
+    #Projects .project-view .wof-images:last-child img {
+        left: 90px;
+        scale: 70%
+    }
+
+    /* Submarine Game */
+    #Projects .project-view .sub-images:first-child img {
+        height: 180px;
+        scale: 60%;
+        left: 80px;
+        top: 80px;
+    }
+    #Projects .project-view .sub-images:last-child img {
+        left: 60px;
+        scale: 60%;
+    }
+
+    /* And More */
+    #Projects .project-view .moreproj-images:first-child img {
+        left: 30px;
+        scale: 70%;
+    }
+    #Projects .project-view .moreproj-images:nth-child(2) img {
+        left: 50px;
+        top: 0px;
+        scale: 70%;
+    }
+    #Projects .project-view .moreproj-images:last-child img {
+        left: 55px;
+        scale: 70%;
+    }
+
+    #Projects .project-view .project-description {
+        max-width: 60%;
+        padding-left: 20px;
+    }
+}
+
+/* Hiding images on smaller screens */
+@media (max-width: 925px) {
+
+    #Projects .project-list {
+        width: 35%;
+    }
+    #Projects .project-view .noproj-images img,
+    #Projects .project-view .website-images img,
+    #Projects .project-view .visneti-images img,
+    #Projects .project-view .wof-images img,
+    #Projects .project-view .sub-images img,
+    #Projects .project-view .moreproj-images img {
+        display: none;
+    }
+
+    #Projects .project-view .project-description {
+        max-width: 100%;
+        padding-left: 0;
+    }
+}
+
+
+
 /* Projects Section Mobile View */
 @media screen and (max-width: 768px) {
 
