@@ -1389,6 +1389,58 @@ a {
         padding-bottom: 100px;
         width: 100%;
     }
+
+    #Education .education-box {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 0;
+        border: none;
+    }
+
+    #Education .left-box {
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    #Education .left-box .image-wrapper {
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+
+    #Education .left-box img {
+        max-width: 80%;
+    }
+
+    #Education .right-box {
+        padding-left: 0;
+    }
+
+    #Education .text {
+        padding: 0;
+    }
+    
+    #Education .tab-label {
+        display: none;
+    }
+
+    #Education .tab-content {
+        display: none;
+    }
+
+    #Education .right-box .text {
+        display: block;
+    }
+    
+    #Education .right-box ul {
+        padding-left: 20px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    #Education .right-box ul li {
+        list-style-type: disc;
+    }
 }
 
 /* Social icons & links styling */
