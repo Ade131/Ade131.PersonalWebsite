@@ -1258,7 +1258,7 @@ a {
 
 #Education .education-box {
     width: 100%;
-    min-height: 350px;
+    min-height: 390px;
     display: flex;
     background: var(--div-color-blockbg);
     border-radius: 30px;
@@ -1379,50 +1379,12 @@ a {
 
 @media screen and (max-width: 950px) {
     #Education .education-box {
-        min-height: 500px; /* Adjust this value as needed */
+        min-height: 550px; /* Adjust this value as needed */
     }
 }
 
 @media screen and (max-width: 768px) {
     #Education {
-        padding-bottom: 100px;
-        width: 100%;
-    }
-}
-
-/* Contact Section */
-
-#Contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 80%;
-    padding-bottom: 150px;
-    max-width: 900px;
-}
-
-#Contact .title-content-wrapper {
-    display: flex;
-    align-items: baseline;
-}
-
-#Contact .content-small-monospace {
-    font-size: 20px;
-}
-
-#Contact .content-medium {
-    color: var(--text-color-lightbluegrey);
-    margin: 0;
-}
-
-#Contact .main-content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media screen and (max-width: 768px) {
-    #Contact {
         padding-bottom: 100px;
         width: 100%;
     }
