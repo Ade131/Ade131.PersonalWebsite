@@ -6,6 +6,7 @@
     --div-color-shadow: rgba(0, 0, 0, 0.5);
     --div-color-blockbg: rgba(0, 0, 0, 0.25);
     --div-color-hover: rgba(136, 250, 216, 0.2);
+    --div-color-tab: rgba(150, 199, 184, 0.1);
     --div-color-background: rgb(23, 28, 40);
     --div-color-header: rgba(23, 28, 40, 0.8);
     --div-color-navMenu: rgb(23, 28, 43);
@@ -1338,7 +1339,7 @@ a {
     z-index: 1;
     top: 2.75em;
     left: 0;
-    background: var(--div-color-hover);
+    background: var(--div-color-tab);
     opacity: 0;
     transition: all 0.35s;
   }
@@ -1350,7 +1351,7 @@ a {
   }
   
   #Education .tab-switch:checked + .tab-label {
-    background: var(--div-color-hover);
+    background: var(--div-color-tab);
     color: white;
     border-bottom: 0;
     border-right: 1px solid var(--div-color-separator);
