@@ -6,7 +6,7 @@
     --div-color-shadow: rgba(0, 0, 0, 0.5);
     --div-color-blockbg: rgba(0, 0, 0, 0.25);
     --div-color-hover: rgba(136, 250, 216, 0.2);
-    --div-color-tab: rgba(150, 199, 184, 0.1);
+    --div-color-tab: rgba(49, 61, 92, 0.301);
     --div-color-background: rgb(23, 28, 40);
     --div-color-header: rgba(23, 28, 40, 0.8);
     --div-color-navMenu: rgb(23, 28, 43);
@@ -887,6 +887,46 @@ a {
     left: -120px;
 }
 
+/* Visneti Project Styles */
+#Projects .project-view .foursix-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#Projects .project-view .foursix-images img {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* first photo */
+#Projects .foursix-images:first-child img {
+    position: relative;
+    top: 60px;
+    left: -150px;
+    z-index: 2;
+}
+
+/* second photo */
+#Projects .foursix-images:nth-child(2) img {
+    position: relative;
+    top: 40px;
+    z-index: 1;
+}
+
+/*third photo */
+#Projects .foursix-images:last-child img {
+    position: relative;
+    top: -85px;
+    left: -80px;
+}
+
 /* Personal Website Project Styles */
 #Projects .project-view .website-images {
     position: absolute;
@@ -969,51 +1009,6 @@ a {
     position: relative;
     top: -85px;
     left: -80px;
-}
-
-/* Wheel of fortune Project Styles */
-#Projects .project-view .wof-images {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-#Projects .project-view .wof-images img {
-    object-fit: cover;
-}
-
-/* first photo */
-#Projects .wof-images:first-child img {
-    position: relative;
-    height: 170px;
-    top: 110px;
-    left: -20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--text-color-darkbluegrey);
-}
-
-/* second photo */
-#Projects .wof-images:nth-child(2) img {
-    position: relative;
-    height: 270px;
-    top: 40px;
-    left: -20px;
-    z-index: 1;
-}
-
-/*third photo */
-#Projects .wof-images:last-child img {
-    position: relative;
-    height: 170px;
-    top: -85px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--text-color-darkbluegrey);
 }
 
 /* Submarine Game Project Styles */
@@ -1483,19 +1478,19 @@ a {
 
 @media screen and (max-width: 1160px) {
     #Education .education-box {
-        min-height: 400px; /* Adjust this value as needed */
+        min-height: 400px; 
     }
 }
 
 @media screen and (max-width: 1030px) {
     #Education .education-box {
-        min-height: 450px; /* Adjust this value as needed */
+        min-height: 450px; 
     }
 }
 
 @media screen and (max-width: 950px) {
     #Education .education-box {
-        min-height: 550px; /* Adjust this value as needed */
+        min-height: 550px; 
     }
 }
 
