@@ -1034,7 +1034,7 @@ a {
 /* first photo */
 #Projects .mbr-images:first-child img {
     position: relative;
-    height: 165px;
+    height: 175px;
     top: 100px;
     left: -10px;
     z-index: 1;
@@ -1043,7 +1043,7 @@ a {
 /*second photo */
 #Projects .mbr-images:last-child img {
     position: relative;
-    height: 220px;
+    height: 145px;
     top: -55px;
 }
 
