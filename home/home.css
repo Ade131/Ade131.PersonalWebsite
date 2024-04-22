@@ -1011,8 +1011,8 @@ a {
     left: -80px;
 }
 
-/* Submarine Game Project Styles */
-#Projects .project-view .sub-images {
+/* Marble Battle Royale Project Styles */
+#Projects .project-view .mbr-images {
     position: absolute;
     top: 0;
     right: 0;
@@ -1025,14 +1025,14 @@ a {
     /* adjust as needed */
 }
 
-#Projects .project-view .sub-images img {
+#Projects .project-view .mbr-images img {
     object-fit: cover;
     border: 1px solid var(--text-color-darkbluegrey);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* first photo */
-#Projects .sub-images:first-child img {
+#Projects .mbr-images:first-child img {
     position: relative;
     height: 165px;
     top: 100px;
@@ -1041,7 +1041,7 @@ a {
 }
 
 /*second photo */
-#Projects .sub-images:last-child img {
+#Projects .mbr-images:last-child img {
     position: relative;
     height: 220px;
     top: -55px;
@@ -1137,12 +1137,12 @@ a {
         left: 60px; 
     }
 
-    /* Submarine Game */
-    #Projects .project-view .sub-images:first-child img {
+    /* Marble Battle Royal Game */
+    #Projects .project-view .mbr-images:first-child img {
         height: 160px;
         left: 60px;
     }
-    #Projects .project-view .sub-images:last-child img {
+    #Projects .project-view .mbr-images:last-child img {
         left: 50px;
     }
 
@@ -1222,14 +1222,14 @@ a {
         scale: 70%
     }
 
-    /* Submarine Game */
-    #Projects .project-view .sub-images:first-child img {
+    /* Marble Battle Royale Game */
+    #Projects .project-view .mbr-images:first-child img {
         height: 180px;
         scale: 60%;
         left: 80px;
         top: 80px;
     }
-    #Projects .project-view .sub-images:last-child img {
+    #Projects .project-view .mbr-images:last-child img {
         left: 60px;
         scale: 60%;
     }
@@ -1265,7 +1265,7 @@ a {
     #Projects .project-view .website-images img,
     #Projects .project-view .visneti-images img,
     #Projects .project-view .wof-images img,
-    #Projects .project-view .sub-images img,
+    #Projects .project-view .mbr-images img,
     #Projects .project-view .moreproj-images img {
         display: none;
     }
